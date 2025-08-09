@@ -66,8 +66,9 @@ export default function MagneticWrapper({
           }
           gsap.to(element, {
             x: 0, y: 0, scale: 1,
-            duration: 0.5,
-            ease: 'power3.inOut',
+            duration: 0.6,
+            ease: 'elastic.out(1, 0.3)',  // Consistent elastic return
+            overwrite: true,
           });
         }
         return;
@@ -122,20 +123,24 @@ export default function MagneticWrapper({
         }
       }
 
-      // Apply effect
+      // Apply effect with natural physics
       if (shouldApplyEffect) {
         gsap.to(element, {
           x: pullX,
           y: pullY,
-          scale: 1 + force * 0.02,
-          duration: 0.4,
-          ease: 'power3.out',
+          scale: 1 + force * 0.03,  // Slightly more scale response
+          duration: 0.3,
+          ease: 'elastic.out(1, 0.5)',  // Natural elastic movement
+          overwrite: true,  // Kill any competing animations
         });
       } else {
         gsap.to(element, {
-          x: 0, y: 0, scale: 1,
-          duration: 0.5,
-          ease: 'power3.inOut',
+          x: 0, 
+          y: 0, 
+          scale: 1,
+          duration: 0.6,
+          ease: 'elastic.out(1, 0.3)',  // Gentle spring back
+          overwrite: true,  // Kill any competing animations
         });
       }
     };
