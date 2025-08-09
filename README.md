@@ -38,7 +38,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 ```
 src/
 ├── app/                    # Next.js app directory
-├── components/             
+├── components/
 │   ├── cursor/            # Magnetic cursor components
 │   │   ├── MagneticCursor.tsx
 │   │   └── MagneticWrapper.tsx
@@ -63,14 +63,18 @@ src/
 ## Key Components
 
 ### MagneticCursor
+
 Main cursor component that handles:
+
 - Magnetic physics calculations
 - Smooth cursor movement
 - Different cursor states (default, hover, play)
 - Touch device detection
 
 ### MagneticWrapper
+
 Wrapper component for magnetic elements:
+
 - Normal magnetic mode
 - Edge-only magnetic mode
 - Configurable strength and threshold
@@ -79,6 +83,7 @@ Wrapper component for magnetic elements:
 ## Customization
 
 ### Magnetic Strength
+
 Adjust the magnetic effect strength in components:
 
 ```tsx
@@ -88,14 +93,11 @@ Adjust the magnetic effect strength in components:
 ```
 
 ### Edge-Only Mode
+
 For cards and larger elements:
 
 ```tsx
-<MagneticWrapper 
-  edgeOnly={true}
-  edgeThreshold={40}
-  growCursor={true}
->
+<MagneticWrapper edgeOnly={true} edgeThreshold={40} growCursor={true}>
   <div>Card Content</div>
 </MagneticWrapper>
 ```
@@ -110,7 +112,7 @@ npm run build
 
 MIT License
 
-Copyright (c) 2024
+Copyright (c) 2025
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
